@@ -25,7 +25,7 @@ The **showcase** template uses the [hugo-book](https://github.com/alex-shpak/hug
 {{< /hint >}}
 
 {{< hint info >}}
-If you forked the repo don't forget to activate the [actions](https://github.com/VisualComputing/showcase/actions).
+If you forked the repo don't forget to activate the [actions](https://github.com/VisualComputing/showcase-visual/actions).
 {{< /hint >}}
 
 {{< hint info >}}
