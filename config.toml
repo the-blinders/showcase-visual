@@ -1,4 +1,4 @@
-baseURL = "https://visualcomputing.github.io/showcase"
+baseURL = "https://the-blinders.github.io/showcase-visual"
 languageCode = "en-us"
 title = "Showcase Template"
 theme = 'book'
