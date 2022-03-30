@@ -22,6 +22,8 @@ Look at this [brief explanation](https://p5js.org/examples/color-relativity.html
 
 {{< p5-iframe sketch="/showcase-visual/sketches/colors.js" width="725" height="425" >}}
 
+{{< p5-iframe sketch="/showcase-visual/sketches/blinders/platonicIris.js" width="725" height="425" >}}
+
 ## Third party libraries
 
 Example adapted from [p5.EasyCam](https://github.com/freshfork/p5.EasyCam/blob/master/examples/QuickStart/QuickStart.js).
