@@ -20,4 +20,8 @@ El problema a solucionar es la aparición de patrones de distribución notableme
 
 Sobre uno de los polos de la esfera se produce un área en donde los planos al límite del plano forman un polígono que debe completarse para cubrir completamente el área de la esfera.
 
+## Fenomeno Visual: Bandas de Mach
+
+Es una ilusión visual que detona la detección de bordes o fronteras en el ojo humano, al colocar consecutivamente bandas de ligeramente diferentes tonos de grises, se experimenta la percepción de tener bordes más acentuados entre ellos. El fenómeno fue identificado en 1865 por el físico Ernst Mach que conjeturó que esta ilusión óptica se origina en el proceso llevado en la retina que practica inhibición lateral entre sus neuronas. El conocimiento de este efecto es importante en campos como la radiología, en donde es un factor para determinar en, un estudio radiológico, síntomas de desgaste, límites entre materiales o en ocasiones al mal diagnóstico de síntomas de neumotórax. En la computación visual lo encontramos como un concepto prominente al ser usado en la generación de gradientes y verse reflejado en métodos como el unsharp masking que realiza la detección de bordes de manera homóloga a la visión humana.
+
 {{< p5-iframe sketch="/showcase-visual/sketches/blinders/sphereTerrain.js" width="635" height="655" >}}
