@@ -13,7 +13,9 @@ Los vertices parametizables qu definen el resto de las caras del sólido se sele
 
 Los 3 sliders ubicados a la izquierda son los parametros de velocidad de rotación sobre cada eje. El slide de la derecha es el parametro del número de vertices muestra seleccionados sobre la circunferencia.
 
-{{< p5-iframe sketch="/showcase-visual/sketches/blinders/platonicIris.js" width="725" height="425" >}}
+{{< p5-iframe sketch="/showcase-visual/sketches/blinders/platonicCube.js" width="725" height="425" >}}
+
+{{< p5-iframe sketch="/showcase-visual/sketches/blinders/platonicOctahedron.js" width="725" height="425" >}}
 
 # Ilusión optica:
 
@@ -73,3 +75,5 @@ https://en.wikipedia.org/wiki/Boris_Delaunay
 https://en.wikipedia.org/wiki/Mach_bands
 https://www.redblobgames.com/x/1842-delaunay-voronoi-sphere/
 https://en.wikipedia.org/wiki/Perlin_noise
+
+{{< p5-iframe sketch="/showcase-visual/sketches/blinders/sphereTerrain.js" width="635" height="655" >}}
