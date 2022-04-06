@@ -36,5 +36,3 @@ https://en.wikipedia.org/wiki/Boris_Delaunay
 https://en.wikipedia.org/wiki/Mach_bands
 https://www.redblobgames.com/x/1842-delaunay-voronoi-sphere/
 https://en.wikipedia.org/wiki/Perlin_noise
-
-{{< p5-iframe sketch="/showcase-visual/sketches/blinders/sphereTerrain.js" width="635" height="655" >}}
