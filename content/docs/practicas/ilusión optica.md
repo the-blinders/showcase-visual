@@ -1,8 +1,4 @@
-# Ilusión optica:
-
-## Bandas de Mach
-
-## Contexto
+# Ilusión optica: Bandas de Mach
 
 ## Fenomeno Visual
 
