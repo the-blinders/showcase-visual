@@ -4,4 +4,4 @@
 
 ### 04/04/2022:
 
-Hay que hacer verdaderos sólidos platónicos
+Nuestra práctica de sólidos platónicos debe ser mejorada, ya que solo muestra uno de los sólidos.

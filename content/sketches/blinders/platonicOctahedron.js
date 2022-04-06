@@ -12,10 +12,6 @@ function setup() {
   detailZ = createSlider(0, 50, 20);
   detailZ.position(15, 5 * sliders_gap);
   detailZ.style("width", "200px");
-
-  shapeFaces = createSlider(2, 10, 5);
-  shapeFaces.position(280, sliders_gap);
-  shapeFaces.style("width", "200px");
 }
 
 function draw() {
@@ -33,7 +29,7 @@ function draw() {
   specularMaterial(250);
   shininess(1);
 
-  esculpePoliedro(0, 0, 150, shapeFaces.value());
+  esculpePoliedro(0, 0, 150, 4);
 }
 
 function esculpePoliedro(x, y, r, n) {

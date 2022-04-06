@@ -9,7 +9,9 @@ Los vertices parametizables qu definen el resto de las caras del sólido se sele
 
 Los 3 sliders ubicados a la izquierda son los parametros de velocidad de rotación sobre cada eje. El slide de la derecha es el parametro del número de vertices muestra seleccionados sobre la circunferencia.
 
-{{< p5-iframe sketch="/showcase-visual/sketches/blinders/platonicIris.js" width="725" height="425" >}}
+{{< p5-iframe sketch="/showcase-visual/sketches/blinders/platonicCube.js" width="725" height="425" >}}
+
+{{< p5-iframe sketch="/showcase-visual/sketches/blinders/platonicOctahedron.js" width="725" height="425" >}}
 
 # Ilusión optica:
 
