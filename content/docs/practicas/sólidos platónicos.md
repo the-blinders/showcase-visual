@@ -6,10 +6,7 @@ Los solidos Platónicos son constituidos por cualquier solido que sea construido
 
 Reciben su nombre por el filosofo antiguo Platón, quien realizó hipótesis en uno de sus dialogos, el texto Timaeus (360 A.C.), alegando que estos solidos reprecentaban homologamente los elementos, agua, aire, fuego, tierra (y posteriormente Quintaesencia) clasicos que usaban como representación de las caracteristicas de la naturaleza.
 
-Este sólido platónico está generado usando las funciones beginShape() y endShape().
-Tiene 2 vertices pivote en 0,0,r y 0,0,-r donde r es un radio definido en este caso de 100.
-
-Los vertices parametizables qu definen el resto de las caras del sólido se seleccionan sobre una circurfenrencia de radio r que habita el plano xy.
+A continuación se presentan 2 sólidos: el cubo y el octaedro.
 
 Los 3 sliders ubicados a la izquierda son los parametros de velocidad de rotación sobre cada eje. El slide de la derecha es el parametro del número de vertices muestra seleccionados sobre la circunferencia.
 
