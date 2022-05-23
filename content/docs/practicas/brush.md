@@ -11,6 +11,8 @@ La manera en la que abordamos el problema fue obteniendo la velocidad a la que s
 
 - El color de los puntos estan en modo HSB , con el valor del  Hue dependiente de la velocidad del mouse, mapeado de 0 a 150. 
 
+{{< figure src="https://us.123rf.com/450wm/myndouwe/myndouwe1609/myndouwe160900008/65990122-colores-rueda-de-color-rgb-nombres-grados-hsb-hsv-tonalidad.jpg?ver=6" title="HSB Color mode" >}}
+
 ### Trabajo futuro
 
 Desarrollar una paleta de pinceles más diversa que acepte diferentes tipos de interactividad más allá de la velocidad del mouse para modificar un conjunto de atributos más amplio que los modificados en este workshop.

@@ -22,6 +22,7 @@ let escorzo;
 let points;
 let record;
 let size_Factor = 10;
+let depthOrientation = 1;
 
 let vel = 0; //variable para guardar la velocidad del mouse
 
@@ -82,10 +83,13 @@ function update() {
   speed = constrain((dx + dy) / (2 * (width - height)), 0, 1);
   if (record) {
     points.push({
-      worldPosition: treeLocation([mouseX, mouseY, mappedDepth], {
-        from: "SCREEN",
-        to: "WORLD",
-      }),
+      worldPosition: treeLocation(
+        [mouseX, mouseY, depthOrientation * mappedDepth],
+        {
+          from: "SCREEN",
+          to: "WORLD",
+        }
+      ),
       color: [mappedHue, 100, 100], //HSB: hue, sat, brig
       speed: speed,
       size: 1 + size_Factor * mappedSize,
@@ -117,6 +121,9 @@ function keyPressed() {
   }
   if (key == "c") {
     points = [];
+  }
+  if (key == "i" || key == "I") {
+    depthOrientation *= -1;
   }
 }
 
