@@ -10,8 +10,9 @@
 // into account its shape and alpha channel, gesture
 // speed, etc.
 
-// Brush controls
-// let color;
+// ############################################################################
+// ##############################  Init Variables  ############################
+// ############################################################################
 
 let brush;
 
@@ -21,13 +22,16 @@ let state;
 let escorzo;
 let points;
 let record;
-let size_Factor = 10;
+let size_Factor = 8;
 let depthOrientation = 1;
 
 let vel = 0; //variable para guardar la velocidad del mouse
 
-function setup() {
-  createCanvas(600, 450, WEBGL);
+// ############################################################################
+// ##############################  Set up  ####################################
+// ############################################################################
+
+function setUpEasyCam() {
   // easycam stuff
   let state = {
     distance: 250, // scalar
@@ -39,24 +43,31 @@ function setup() {
   easycam.setState(state, 2000); // now animate to that state
   escorzo = true;
   perspective();
-
-  // brush stuff
-  points = [];
-
-  // select initial brush
-  brush = customBrush;
-  // mouse velocity
-  textSize(20);
 }
 
-function draw() {
-  update();
-  background(12);
+function setup() {
+  createCanvas(600, 450, WEBGL);
+  setUpEasyCam();
+  points = [];
+  brush = customBrush;
+}
+
+function drawGrid() {
   push();
   strokeWeight(0.8);
   stroke("green");
   grid({ dotted: false });
   pop();
+}
+
+// ############################################################################
+// ##############################  Draw  ######################################
+// ############################################################################
+
+function draw() {
+  background(12);
+  drawPoints();
+  drawGrid();
   axes();
   for (const point of points) {
     push();
@@ -64,52 +75,48 @@ function draw() {
     brush(point);
     pop();
   }
-  let camRot = easycam.getRotation();
-  // console.log(camRot);
-  // mouse velocity
 }
 
-function update() {
+function drawPoints() {
   let dx = abs(mouseX - pmouseX);
   let dy = abs(mouseY - pmouseY);
 
-  let difX = abs(mouseX - pmouseX);
-  let difY = abs(mouseY - pmouseY);
-  let vel = difX + difY;
+  let vel = dx + dy;
 
-  let mappedHue = map(vel, 0, 200, 5, 150);
-  let mappedSize = map(vel, 0, 200, 0, 1);
-  let mappedDepth = map(vel, 0, 200, 0.1, 1.3);
   speed = constrain((dx + dy) / (2 * (width - height)), 0, 1);
+
+  let mappedHue = map(vel, 0, 200, 5, 170);
+  let mappedSize = map(vel, 0, 200, 0, 1);
+  let mappedDepth = map(vel, 0, 200, 0.1, 1.4);
+
+  let pointDepth = depthOrientation * mappedDepth - sqrt(mappedDepth) / 10;
+  let pointSize = 0.8 + size_Factor * mappedSize;
+
   if (record) {
     points.push({
-      worldPosition: treeLocation(
-        [mouseX, mouseY, depthOrientation * mappedDepth],
-        {
-          from: "SCREEN",
-          to: "WORLD",
-        }
-      ),
+      worldPosition: treeLocation([mouseX, mouseY, pointDepth], {
+        from: "SCREEN",
+        to: "WORLD",
+      }),
       color: [mappedHue, 100, 100], //HSB: hue, sat, brig
       speed: speed,
-      size: 1 + size_Factor * mappedSize,
+      size: pointSize,
     });
-    console.log(speed);
   }
 }
 
 function customBrush(point) {
   push();
   noStroke();
-  // parameterize sphere radius and
-  // color acording to mouse velocity
-
   colorMode(HSB);
   fill(point.color[0], point.color[1], point.color[2]);
   sphere(point.size);
-
   pop();
 }
+
+// ############################################################################
+// ##############################  Button keys  ###############################
+// ############################################################################
 
 function keyPressed() {
   if (key === "r" || key === "R") {
