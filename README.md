@@ -9,7 +9,7 @@ Welcome to the [gohugo](https://gohugo.io/) template to create rich content [aca
 Install the [gohugo](https://gohugo.io/) [static site generator](https://jamstack.org/generators/) then:
 
 ```sh
-$git clone https://github.com/VisualComputing/showcase
+$git clone https://github.com/the-blinders/showcase-visual
 $cd showcase
 $git submodule update --init --recursive
 $hugo server -D --disableFastRender
