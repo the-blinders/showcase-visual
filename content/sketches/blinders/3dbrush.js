@@ -11,8 +11,8 @@
 // speed, etc.
 
 // Brush controls
-let color;
-let depth;
+// let color;
+
 let brush;
 
 let easycam;
@@ -21,6 +21,8 @@ let state;
 let escorzo;
 let points;
 let record;
+let size_Factor = 10;
+let depthOrientation = 1;
 
 let vel = 0; //variable para guardar la velocidad del mouse
 
@@ -40,11 +42,7 @@ function setup() {
 
   // brush stuff
   points = [];
-  depth = createSlider(0, 1, 0.05, 0.05);
-  depth.position(10, 10);
-  depth.style("width", "580px");
-  color = createColorPicker([255, 40, 80]);
-  color.position(width - 70, 40);
+
   // select initial brush
   brush = customBrush;
   // mouse velocity
@@ -53,10 +51,10 @@ function setup() {
 
 function draw() {
   update();
-  background(120);
+  background(12);
   push();
   strokeWeight(0.8);
-  stroke("magenta");
+  stroke("green");
   grid({ dotted: false });
   pop();
   axes();
@@ -67,7 +65,7 @@ function draw() {
     pop();
   }
   let camRot = easycam.getRotation();
-  console.log(camRot);
+  // console.log(camRot);
   // mouse velocity
 }
 
@@ -81,18 +79,22 @@ function update() {
 
   let mappedHue = map(vel, 0, 200, 5, 150);
   let mappedSize = map(vel, 0, 200, 0, 1);
-
+  let mappedDepth = map(vel, 0, 200, 0.1, 1.3);
   speed = constrain((dx + dy) / (2 * (width - height)), 0, 1);
   if (record) {
     points.push({
-      worldPosition: treeLocation([mouseX, mouseY, depth.value()], {
-        from: "SCREEN",
-        to: "WORLD",
-      }),
+      worldPosition: treeLocation(
+        [mouseX, mouseY, depthOrientation * mappedDepth],
+        {
+          from: "SCREEN",
+          to: "WORLD",
+        }
+      ),
       color: [mappedHue, 100, 100], //HSB: hue, sat, brig
       speed: speed,
-      size: 1 + 2 * mappedSize,
+      size: 1 + size_Factor * mappedSize,
     });
+    console.log(speed);
   }
 }
 
@@ -113,12 +115,15 @@ function keyPressed() {
   if (key === "r" || key === "R") {
     record = !record;
   }
-  if (key === "p") {
+  if (key === "p" || key === "P") {
     escorzo = !escorzo;
     escorzo ? perspective() : ortho();
   }
   if (key == "c") {
     points = [];
+  }
+  if (key == "i" || key == "I") {
+    depthOrientation *= -1;
   }
 }
 
