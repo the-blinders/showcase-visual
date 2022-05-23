@@ -20,5 +20,10 @@ Desarrollar una paleta de pinceles más diversa que acepte diferentes tipos de i
 {{< p5-iframe sketch="/showcase-visual/sketches/blinders/3dbrush.js" 
 lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" 
 lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" 
+lib3="https://unpkg.com/handsfree@8.4.2/build/lib/handsfree.js"
 width="625" height="475" >}}
-
+<!-- 
+{{< p5-iframe sketch="/showcase-visual/sketches/blinders/refhands.js" 
+lib1="https://unpkg.com/handsfree@8.4.2/build/lib/handsfree.js" 
+lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" 
+width="625" height="475" >}} -->
