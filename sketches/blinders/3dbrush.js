@@ -67,12 +67,20 @@ function draw() {
     pop();
   }
   let camRot = easycam.getRotation();
+  console.log(camRot);
   // mouse velocity
 }
 
 function update() {
   let dx = abs(mouseX - pmouseX);
   let dy = abs(mouseY - pmouseY);
+
+  let difX = abs(mouseX - pmouseX);
+  let difY = abs(mouseY - pmouseY);
+  let vel = difX + difY;
+
+  let mappedHue = map(vel, 0, 200, 5, 150);
+  let mappedSize = map(vel, 0, 200, 0, 1);
 
   speed = constrain((dx + dy) / (2 * (width - height)), 0, 1);
   if (record) {
@@ -81,8 +89,9 @@ function update() {
         from: "SCREEN",
         to: "WORLD",
       }),
-      color: color.color(),
+      color: [mappedHue, 100, 100], //HSB: hue, sat, brig
       speed: speed,
+      size: 1 + 2 * mappedSize,
     });
   }
 }
@@ -90,24 +99,18 @@ function update() {
 function customBrush(point) {
   push();
   noStroke();
-  // TODO parameterize sphere radius and / or
-  // alpha channel according to gesture speed
-  let difX = abs(mouseX - pmouseX);
-  let difY = abs(mouseY - pmouseY);
-  let vel = difX + difY;
+  // parameterize sphere radius and
+  // color acording to mouse velocity
 
-  let mapedColor = map(vel, 0, 150, 50, 255);
-  // console.log(mapedColor);
+  colorMode(HSB);
+  fill(point.color[0], point.color[1], point.color[2]);
+  sphere(point.size);
 
-  // fill(point.color);
-  fill(100, 0, mapedColor);
-
-  sphere(1 * (vel + 1));
   pop();
 }
 
 function keyPressed() {
-  if (key === "r") {
+  if (key === "r" || key === "R") {
     record = !record;
   }
   if (key === "p") {
