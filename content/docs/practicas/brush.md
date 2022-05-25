@@ -49,6 +49,10 @@ Desarrollar una paleta de pinceles más diversa que acepte diferentes tipos de i
 
 Extrapolar la interactividad extendida para permitir una rotación del espacio tridimensional haciendo uso de otra mano
 
+### Herramientas externas usadas
+
+*(handsfree.js)* 
+
 {{< p5-iframe sketch="/showcase-visual/sketches/blinders/3dbrush.js" 
 lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" 
 lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" 
