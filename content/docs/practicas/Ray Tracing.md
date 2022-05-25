@@ -7,3 +7,4 @@ height="600"></iframe>
 
 # ¿Qué es el Ray Tracing?
 Ray Tracing es una tecnología que se encarga de mejorar las iluminaciones, sombras y reflejos de los videojuegos. Las palabras Ray Tracing significan en español trazado de rayos, haciendo referencia a un mucho mejor cálculo de los reflejos y sombras creados por las iluminaciones del entorno. Con este algoritmo, las escenas en los videojuegos se acercan más a la realidad pero también tienen sus desventajas, y es que el rendimiento en FPS globales se ve bastante penalizado.
+![raytracing](https://developer.nvidia.com/sites/default/files/pictures/2018/RayTracing/ray-tracing-image-1.jpg)
