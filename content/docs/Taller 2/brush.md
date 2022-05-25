@@ -60,13 +60,12 @@ lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js"
 lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" 
 lib3="https://unpkg.com/handsfree@8.4.2/build/lib/handsfree.js"
 width="625" height="475" >}}
+
 <iframe src="https://editor.p5js.org/jhac/full/rIsGVkl3C"
 width="625"
 height="475"
 ></iframe>
 
-<!-- 
-{{< p5-iframe sketch="/showcase-visual/sketches/blinders/refhands.js" 
-lib1="https://unpkg.com/handsfree@8.4.2/build/lib/handsfree.js" 
-lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" 
-width="625" height="475" >}} -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5JuHjjKyVU8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ 
