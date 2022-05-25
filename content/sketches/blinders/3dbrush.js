@@ -31,6 +31,8 @@ let mappedDepth;
 let pointDepth;
 let pointSize;
 
+let mouseBrushShape = "sphere";
+
 let basePointSize = 0.8;
 let size_Factor = 8;
 let depthOrientation = 1;
@@ -79,6 +81,12 @@ function setupFreeHands() {
     // Right fingertips
     [color("red"), color("green"), color("blue"), color("yellow")],
   ];
+  shapeMap = [
+    // Left fingertips
+    ["sphere", "sphere", "box", "box"],
+    // Right fingertips
+    ["sphere", "sphere", "box", "box"],
+  ];
 
   // #1 Turn on some models (hand tracking) and the show debugger
   // @see https://handsfree.js.org/#quickstart-workflow
@@ -111,10 +119,21 @@ function drawGrid() {
   pop();
 }
 
-function setPointAttributes(velocity) {
+function setPointAttributes(vel, shape) {
+  let minHue, maxHue;
+  if (shape === "sphere") {
+    minHue = 5;
+    maxHue = 180;
+  } else {
+    minHue = 180;
+    maxHue = 180 + 400;
+  }
   speed = constrain(vel / (2 * (width - height)), 0, 1);
 
-  mappedHue = map(vel, 0, 200, 5, 170);
+  mappedHue = map(vel, 0, 200, minHue, maxHue);
+  if (shape === "sphere" && mappedHue > 180) {
+    mappedHue = 180;
+  }
   mappedSize = map(vel, 0, 200, 0, 1);
   mappedDepth = map(vel, 0, 200, 0.1, 1.4);
 
@@ -122,13 +141,13 @@ function setPointAttributes(velocity) {
   pointSize = basePointSize + size_Factor * mappedSize;
 }
 
-function capturePoints() {
+function mousePaint() {
   dx = abs(mouseX - pmouseX);
   dy = abs(mouseY - pmouseY);
 
   vel = dx + dy;
 
-  setPointAttributes(vel);
+  setPointAttributes(vel, mouseBrushShape);
 
   if (record) {
     points.push({
@@ -139,17 +158,21 @@ function capturePoints() {
       color: [mappedHue, 100, 100], //HSB: hue, sat, brig
       speed: speed,
       size: pointSize,
+      shape: mouseBrushShape,
     });
   }
 }
 
 function draw() {
   background(12);
-  capturePoints();
+
   drawGrid();
   axes();
+
+  mousePaint();
   fingerPaint();
-  drawHands();
+  // drawHands(); // Only for debug use
+
   for (const point of points) {
     push();
     translate(point.worldPosition);
@@ -163,7 +186,7 @@ function customBrush(point) {
   noStroke();
   colorMode(HSB);
   fill(point.color[0], point.color[1], point.color[2]);
-  sphere(point.size);
+  point.shape === "sphere" ? sphere(point.size) : box(point.size);
   pop();
 }
 
@@ -198,7 +221,7 @@ function fingerPaint() {
 
             vel = dx + dy;
 
-            setPointAttributes(vel);
+            setPointAttributes(vel, shapeMap[handIndex][finger]);
 
             points.push({
               worldPosition: treeLocation([x, y, pointDepth], {
@@ -208,6 +231,7 @@ function fingerPaint() {
               color: [mappedHue, 100, 100], //HSB: hue, sat, brig
               speed: speed,
               size: pointSize,
+              shape: shapeMap[handIndex][finger],
             });
           }
           // Set the last position
@@ -220,7 +244,9 @@ function fingerPaint() {
 
 function drawHands() {
   const hands = handsfree.data?.hands;
-
+  handsfree.use("consoleLogger", (data) => {
+    console.log("rotation", data?.hands.rotation);
+  });
   // Bail if we don't have anything to draw
   if (!hands?.landmarks) return;
 
@@ -285,6 +311,13 @@ function keyPressed() {
   }
   if (key == "i" || key == "I") {
     depthOrientation *= -1;
+  }
+  if (key == "x" || key == "X") {
+    if (mouseBrushShape === "sphere") {
+      mouseBrushShape = "box";
+    } else {
+      mouseBrushShape = "sphere";
+    }
   }
 }
 
