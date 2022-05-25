@@ -11,3 +11,6 @@ Ray Tracing es una tecnología que se encarga de mejorar las iluminaciones, somb
 En la actualidad algunos juegos usan ray tracing en tiempo real gracias a los avances de NVIDIA y su arquitectura en la serie 2000 de tarjetas de video, un ejemplo de videojuego que usa ray tracing es:
 Sword and Fairy 7
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lGO6M7joVxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Trabajo Futuro
+Al investigar se encuentra que lenguajes GPGPU como CUDA o OPENCL mediante la programacion paralela nos permiten con mas facilidad generar un ejemplo de ray tracing al tener mas soporte y ayudas para esto, se podria intentar realizar un ejemplo en estos lenguajes
