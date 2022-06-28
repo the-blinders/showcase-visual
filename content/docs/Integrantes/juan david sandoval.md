@@ -23,7 +23,7 @@ Luego de tener el ejemplo completamente funcional se implemento otro slider el c
 Para el ejercicio numero dos se intento usar de base el ejemplo dado por el profesor, se logro correr el ejemplo con algunas modificaciones  debido a que el ejemplo original tenia errores y mostraba una pantalla negra, tambien se implemento 6 sliders los cuales los primeros 3 sirven para cuadrar el brightness de la imagen, los otros 3 slider pretendian dar valores para generar un color HSL y mezclar el luma, el brillo y los colores en la imagen, sin embargo esto no se logro por algunas cuestiones tecnicas y de tiempo por lo tanto se logro solo correr el ejemplo, usar otra imagen de base y modificar el brillo en la imagen.
 
 ### Ejercicio 3:
-
+No se realizo por cuestiones logisticas y de tiempo
 
 ### Ejercicio 4:
 Para el ejercicio numero 4 se necesito la ayuda del ejemplo del profesor y el libro "the book of shaders" de Patricio Gonzalez y Jen Lowe, buscando patrones se encontraron posibles soluciones como el "Islamic Star Pattern" trabajado en The Coding Train y mas tipos de patrones en internet sin embargo en estos no se hacia uso de shaderes por lo tanto se implemento un patron del libro the book of shaders y se uso otra figura 3D para visualizar el patron cumpliendo asi con el ejercicio propuesto
