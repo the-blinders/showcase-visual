@@ -52,7 +52,7 @@ height="600"
 ## Shader que mira y transforma
 
 Nos devolvemos un poco a la escena anterior para hacerlo en 2d, pero ahora vamos a crear un shader que hace uso de la cámara web, no solo esto, este ejercicio combina el texturizado mediante datos tomados de la cámara,pues lo transforma en una textura que puede analizar el shader, además, definimos los kernels de convolución desde p5 para que estén disponibles para cada texel. el radio del area de acción es también una varaible uniforme, recordemos que estas varaibles están disponibles para cada texel, que pinta finalmente la textura en pantalla.
-
+[Link, si no funciona](https://editor.p5js.org/degarzonm/sketches/Ao8VajytB).
 
 <iframe src="https://editor.p5js.org/degarzonm/full/Ao8VajytB"
 width="800"
